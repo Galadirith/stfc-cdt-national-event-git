@@ -10,7 +10,7 @@ module.exports = {
   },
 
   output: {
-    path: path.resolve(__dirname, 'build'),
+    path: path.resolve(__dirname),
     filename: 'js/[name]-[hash].js'
   },
 
@@ -69,6 +69,5 @@ module.exports = {
       }}),
     new ExtractTextPlugin('css/[name]-[contenthash].css'),
     new HtmlWebpackPlugin({template: 'template/index.html'}),
-    new CopyWebpackPlugin([{from: 'img/*'}])
   ]
 };

@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<!--
+                                    Made by
+                    ______      __          ____     ____  __
+                   / ____/___ _/ /___ _____/ /_/____/_/ /_/ /_
+                  / / __/ __ `/ / __ `/ __  / / ___/ / __/ __ \
+                 / /_/ / /_/ / / /_/ / /_/ / / /  / / /_/ / / /
+                 \____/\__,_/_/\__,_/\__,_/_/_/  /_/\__/_/ /_/
+
+                                    GPL-3.0
+
+  I'm really glad that you found your way to this app and the source code :D
+
+  I love building tools to connect people with data. I really hope that you
+  enjoyed this app, and thank you so much for taking the time to check out my
+  source code.
+                              _________________
+                             /\  _____________ \
+                            /  \ \___________/\ \
+                           / /\ \ \       / /\ \ \
+                          / / /\ \ \_____/ / /\ \ \
+                         / /_/__\ \ \____\/_/  \ \ \
+                         \ \ \___\ \ \___/\ \   \ \ \
+                          \ \ \   \ \ \__\ \ \___\_\ \
+                           \ \ \   \ \____\ \ \_______\
+                            \ \ \  / / ____\ \ \____  /
+                             \ \ \/ / /     \ \ \/ / /
+                              \ \/ / /_______\_\/ / /
+                               \  / /___________\/ /
+                                \/________________/
+  -->
+<html>
+<head>
+
+<!-- # Metadata -->
+<meta charset="utf-8">
+<title>VCS, Git and GitHub</title>
+<link rel="icon" href="https://gravity.astro.cf.ac.uk/~c1548640/sin_t_iacute_tulo_2__2__by_betatus-d6th2k0.ico">
+
+<!-- # Styles -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/print/pdf.min.css"> -->
+<link href="css/index-f20e34391f876037aa8d6be7a2267299.css" rel="stylesheet"></head>
+<body>
+
+<!-- # Slides -->
+<div class="reveal">
+  <div class="slides">
+
+    <!-- # Heading slide -->
+    <section class="heading" data-state="no-controls">
+      <div data-markdown><script type="text/template">
+        # VCS, Git and GitHub
+
+        *Any tool should be useful in the expected way, but a truly great tool
+        lends itself to uses you never expected.*
+        *[Eric S. Raymond, The Cathedral and the Bazaar](http://www.catb.org/~esr/writings/cathedral-bazaar/)*
+
+        <!-- .element: class="quote" -->
+
+        [goo.gl/7aGpDQ](https://goo.gl/7aGpDQ)
+      </script></div>
+    </section>
+
+    <!-- # Profile -->
+    <section class="heading" data-state="no-controls">
+      <div class="profile">
+        <div>
+          <div class="edward"></div>
+          <div data-markdown><script type="text/template">
+            **Edward Fauchon-Jones**
+            <br/>
+            [<i class="fa fa-github" aria-hidden="true"></i> Galadirith](https://github.com/Galadirith)
+          </script></div>
+        </div>
+        <div>
+          <div data-markdown><script type="text/template">
+            - Python
+            - C/C++
+            - Javascript/Coffeescript
+            - HTML/CSS
+            - Gravitational waveform modelling
+            - Parameter estimation
+            - Git
+            - Docker
+            - ...
+          </script></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- # References -->
+    <section class="heading" data-state="no-controls">
+      <div class="references">
+        <div>
+          <div class="jessica"></div>
+          <div data-markdown><script type="text/template">
+            **Jessica Lord**
+            <br/>
+            [<i class="fa fa-github" aria-hidden="true"></i> jlord](https://github.com/jlord)
+            <br/>
+            [jlord.github.io](https://jlord.github.io)
+          </script></div>
+        </div>
+        <div>
+          <div class="duncan"></div>
+          <div data-markdown><script type="text/template">
+            **Duncan Macleod**
+            <br/>
+            [<i class="fa fa-github" aria-hidden="true"></i> duncanmmacleod](https://github.com/duncanmmacleod)
+            <br/>
+            [gwpy.github.io](https://gwpy.github.io/)
+          </script></div>
+        </div>
+        <div>
+          <div class="adam"></div>
+          <div data-markdown><script type="text/template">
+            **Adam Mercer**
+            <br/>
+            [<i class="fa fa-github" aria-hidden="true"></i> skymoo](https://github.com/skymoo)
+            <br/>
+            <br/>
+          </script></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+
+      <!-- # Introduction : Version Control Systems (VCS) -->
+      <section class="heading" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          # Introduction
+          ### Version Control Systems (VCS)
+        </script></div>
+      </section>
+
+      <!-- # What is a Version Control System (VCS)? -->
+      <section class="two-column-2-3"><div>
+          <div data-markdown><script type="text/template">
+            ##### What is a Version Control System (VCS)?
+
+            *Version control is a system that records changes to a file or set of
+            files over time so that you can recall specific versions later*
+            *[About Version Control, Pro Git book](https://git-scm.com/book/en/v2/Getting-Started-About-Version-Control)*
+
+            <!-- .element: class="quote fragment" data-fragment-index="1" -->
+
+            ##### Examples of simple VCS
+
+            - Google Docs
+            - Apple Time Machine
+            - `Ctrl+Z`
+            - Manually copy (i.e. You)
+            - ...
+
+            <!-- .element: class="fragment" data-fragment-index="2" -->
+        </script></div>
+      </div></section>
+
+      <!-- # Why use a VCS? -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Why use a VCS?
+
+          - **Record history**<br/>
+            Track the development of a project
+
+          - **Describe changes**<br/>
+            Find out why a specific change was made
+
+          - **Fix mistakes**<br/>
+            Retrieve code that was previously deleted or changed
+
+          - **Share updates**<br/>
+            Collaborate with other developers remoteley
+
+          - **Project managment**<br/>
+            Control project development and divide tasks
+
+          <!-- .element: class="fragment" data-fragment-index="1" -->
+
+        </script></div>
+      </div></section>
+
+      <!-- # History of VCS -->
+      <section class="three-column-2-3-3"><div>
+        <div data-markdown><script type="text/template">
+          **VCS generations**
+
+          #### Features
+
+          #### Examples
+
+          #### First generation
+
+          - Centralized on a single machine
+          - No concurrent editing
+          - File scope history
+
+          <!-- .element: class="fragment" data-fragment-index="0" -->
+
+          - Source Code Control System (SCCS)
+          - Revision Control System (RCS)
+
+          <!-- .element: class="fragment" data-fragment-index="0" -->
+
+          #### Second generation
+
+          - Centralized on multiple machines
+          - Merge before recording changes
+          - File/set scope history
+          - Changeset based
+
+          <!-- .element: class="fragment" data-fragment-index="1" -->
+
+          - Concurrent Versions System (CVS)
+          - Subversion (SVN)
+          - Team Foundation Server
+
+          <!-- .element: class="fragment" data-fragment-index="1" -->
+
+          #### Third generation
+
+          - Decentralized
+          - Merge after recording changes
+          - Fileset scope history
+          - Changeset/Snapshot based
+
+          <!-- .element: class="fragment" data-fragment-index="2" -->
+
+          - Bazaar
+          - Git
+          - Mercurial
+
+          <!-- .element: class="fragment" data-fragment-index="2" -->
+        </script></div>
+      </div></section>
+
+      <!-- # Why use Git? -->
+      <section class="three-column-2-3-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Why use Git?
+
+          [![](img/tensorflow.png)](https://github.com/tensorflow/tensorflow)
+
+          [![](img/python.png)](https://github.com/python/cpython)
+
+          ###### *(A better question is who isn't using Git?)*
+          <!-- .element: class="fragment" data-fragment-index="0" -->
+
+          [![](img/pycbc.png)](https://github.com/ligo-cbc/pycbc)
+
+          [![](img/node.png)](https://github.com/nodejs/node)
+        </script></div>
+      </div></section>
+
+    </section>
+
+
+    <!-- # Pattern I : Manage projects with Git -->
+    <section>
+
+      <section class="heading" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          # Pattern I
+          ### Manage projects with Git
+        </script></div>
+      </section>
+
+      <!-- # Goals -->
+      <section class="prose" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          # Goals
+
+          1. **Setup `git`**<br>
+             Install `git` and configure `git` in a recommend initial state
+
+          2. **Create a repository**<br>
+             Create a folder and convert it to a `git` repository to start
+             tracking snapshots
+
+          3. **Create a commit**<br>
+             Create our first project file and store a snapshot
+
+          4. **Browse your repository**<br>
+             View current changes and past commits
+
+          5. **Push to GitHub**<br>
+             Create a copy of our respository on GitHub
+        </script></div>
+      </section>
+
+      <!-- # Global definitions -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Terminal
+
+          A **terminal** or **text terminal** is a program that allows us to
+          interact with a computer with text rather than graphic user
+          interfaces and with applications that have **command line
+          interfaces.**
+
+          #### Commands
+
+          To run a **command** in a terminal just type it out and press
+          enter. You might often see commands preceeded with `$` or `>`. This
+          are to indicate that the terminal is ready for a command but are not
+          part of the command that you should type out and run.
+        </script></div>
+        <div>
+        <div data-markdown><script type="text/template">
+          #### Git commands
+        </script></div>
+        <div data-markdown><script type="text/template">
+          All `git` commands have the same format
+
+          ```shell
+          $ git <git-command> [<value-1> <value-2> ...]
+          ```
+
+          When you see an expression like `<value>` you should replace it and
+          the brackets `<` and `>` with an appropriate value which will depend
+          on the situation. An expression like `[optional]` is optional. If you
+          use it when running a command you should replace it with `optional`.
+        </script></div>
+        </div>
+      </div></section>
+
+      <!-- # Setup Git definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-config](https://git-scm.com/docs/git-config)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git config [--global] <name> <value>
+          ```
+
+          Configure options that determine how Git runs.
+
+          `--global` *Set options that affect all Git repositories on your computer*
+
+          <!-- .element: class="parameter" -->
+
+          `name` *Name of the option that you want to change*
+
+          <!-- .element: class="parameter" -->
+
+          `value` *Value that you want `name` to be changed to*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Setup git -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 1
+
+          ##### Setup Git
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### Install Git
+
+          If you don't have Git already installed (run `git --version` to
+          find out) the simplest way to do this on Mac and Windows is to head
+          over to [git-scm.com](https://git-scm.com/) and download and install
+          the program. If you are on a debian based operating system run
+          `apt-get install git`.
+        </script></div>
+        <div>
+          <div data-markdown><script type="text/template">
+            #### Configure Git
+          </script></div>
+          <div data-markdown><script type="text/template">
+            We will tell Git your name and email address so that commits you
+            make are attributed to you
+
+            ```shell
+            $ git config --global user.name <your-name>
+            $ git config --global user.email <your-email>
+            ```
+          </script></div>
+        </div>
+      </div></section>
+
+      <!-- # Create repository definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-init](https://git-scm.com/docs/git-init)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git init <directory>
+          ```
+
+          Create an empty Git repository or reinitialize an existing one
+
+          `Directory` *Directory in which to create an empty Git repository*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### [git-status](https://git-scm.com/docs/git-status)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git status [<path>]
+          ```
+
+          Show the working tree status
+
+          `Path` *Path to file or directory to check the status of. If you omit
+          `Path` then the status of your entire repository will be checked*.
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Create repository -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 2
+
+          ##### Create a repository
+
+          #### Make a folder
+
+          ```shell
+          $ mkdir dragonite
+          $ cd dragonite
+          ```
+
+          #### Initialize it
+
+          ```shell
+          $ git init .
+          Initialized empty Git repository in .../dragonite/.git/
+          ```
+
+          #### Inspect it
+
+          ```shell
+          $ git status
+          On branch master
+          Initial commit
+          nothing to commit (create/copy files and use "git add" to track)
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Create a commit definitions -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Repository
+
+          A **repository** is your projects folder plus a special folder `.git`
+          that is created during initialization inside your projects folder.
+          This special folder stores all Git information including previous
+          versions.
+
+          #### Commit
+
+          A **commit** is a snapshot of the files in your projects folder
+          that is recorded by Git along with metadata including when it was
+          committed and who made it.
+
+          #### Working tree
+
+          Your **working tree** are all the files in your repository other
+          then the `.git` folder. We say that these files are
+          **checked out**.
+
+          #### Index
+
+          A snapshot of your working tree that has not been commited. We can
+          tell Git which modifications to include in the **index**.
+        </script></div>
+      </div></section>
+
+      <!-- # Create a commit command definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-add](https://git-scm.com/docs/git-add)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git add <path-list>
+          ```
+
+          Add file content modifications to the index
+
+          `path` *A list space separated paths to add to the index. These can
+          be file paths or directory paths.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### [git-commit](https://git-scm.com/docs/git-commit)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git commit [-m <message>]
+          ```
+
+          Record changes to the repository
+
+          `-m <message>` *A message to describe your commit.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Create repository -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 3
+
+          ##### Create a commit
+
+          #### Create a file
+
+          ```shell
+          $ echo "print('hello, world')" > dragonite.py
+          ```
+
+          #### Add to the index
+
+          ```shell
+          $ git add dragonite.py
+          ```
+
+          #### Commit it
+
+          ```shell
+          $ git commit -m "Add dragonite"
+          [master (root-commit) 798e5a2] Add dragonite
+           1 file changed, 1 insertion(+)
+           create mode 100644 dragonite.py
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Browse repository command definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-log](https://git-scm.com/docs/git-log)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git log [--decorate] [--graph] [--oneline]
+          ```
+
+          Show commit logs
+
+          `--decorate` *Display branch names.*
+
+          <!-- .element: class="parameter" -->
+
+          `--graph` *Draw a text-based graphical representation of the commit
+          history.*
+
+          <!-- .element: class="parameter" -->
+
+          `--oneline` *Display a condensed log message.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### [git-diff](https://git-scm.com/docs/git-diff)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git diff [--cached]
+          ```
+
+          Show changes between working tree and *checked out* commit
+
+          `--cached` *Show changes between index and checked out commit.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Browse repository -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 4
+
+          ##### Browse repository
+
+          #### Show logs
+
+          ```shell
+          $ git log --decorate --oneline --graph
+          * 10cc414 (HEAD -> master) Add darth-vader
+          * c496492 Add harry-potter
+          * b727c67 Add pikachu
+          * 798e5a2 Add dragonite
+          ```
+
+          #### Show diff
+
+          ```shell
+          $ git diff
+          diff --git a/darth-vader.py b/darth-vader.py
+          index b2204a3..0286ba5 100644
+          --- a/darth-vader.py
+          +++ b/darth-vader.py
+          @@ -1 +1 @@
+          -print('hello, world')
+          +print('You were right')
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Push to GitHub definitions -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Branch
+
+          A **branch** is a sequence of commits representing a single line
+          of development. We refer to the tip of the branch as the **branch
+          head** and it points at a specific commit.
+
+          #### Remote
+
+          A **remote** or remote repository is a *copy* of your repository
+          that you are watching or **tracking**. Your repository may contain
+          commits that it doesn't have and it may contain commits your
+          repository doesn't have.
+        </script></div>
+      </div></section>
+
+      <!-- # Push to GitHub movie -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### New GitHub Repository
+        </script></div>
+        <video src="https://gravity.astro.cf.ac.uk/~c1548640/create-github-repo.mp4" autoplay controls></video>
+      </div></div></section>
+
+      <!-- # Push to GitHub command definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-remote](https://git-scm.com/docs/git-remote)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git remote add <remote-name> <remote-url>
+          ```
+
+          Manage set of tracked repositories
+
+          `remote-name` *The name you want to give this tracked remote
+          repository.*
+
+          <!-- .element: class="parameter" -->
+
+          `remote-url` *URL of the remote repository.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### [git-push](https://git-scm.com/docs/git-push)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git push [-u] [<remote-name>] [<remote-branch>]
+          ```
+
+          Update remote repositories along with associated commits
+
+          `remote-name` *The name of the remote repository you want to
+          update.*
+
+          <!-- .element: class="parameter" -->
+
+          `remote-branch` *Branch you want to send updates to from the current
+          branch.*
+
+          <!-- .element: class="parameter" -->
+
+          `-u` *If both `remote-name` and `remote-branch` are given, Git will
+          rememeber so that you can omit them in future pushes.*
+        </script></div>
+      </div></div></section>
+
+      <!-- # Push to GitHub -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 5
+
+          ##### Push to GitHub
+
+          #### Add a remote
+
+          ```shell
+          $ git remote add origin <remote-url>
+          ```
+
+          #### Push a branch
+
+          ```shell
+          $ git push origin master
+          ```
+        </script></div>
+      </div></section>
+
+
+
+    </section>
+
+    <!-- # Pattern II : Making changes to projects -->
+    <section>
+      <section class="heading" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          # Pattern II
+          ### Making changes to projects
+        </script></div>
+      </section>
+
+      <!-- # Goals -->
+      <section class="prose" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          # Goals
+
+          1. **Create branches**<br>
+             Create a new development line of commits
+
+          2. **Merge branches with fast-forward**<br>
+             Combine different directly related development lines of commits
+
+          3. **Merge branches with a new commit**<br>
+             Combine different development lines of commits
+
+          4. **Merge branches that have a conflict**<br>
+             Combine different development lines of commits that change the
+             same content
+
+          5. **Undo commits**<br>
+             Delete previous commits from a repository
+        </script></div>
+      </section>
+
+      <!-- # Create branches command definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-branch](https://git-scm.com/docs/git-branch)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git branch [-d] [--list] [<branch-name>]
+          ```
+
+          List, create, or delete branches
+
+          `-d` *Delete a branch.*
+
+          <!-- .element: class="parameter" -->
+
+          `--list` *List branches.*
+
+          <!-- .element: class="parameter" -->
+
+          `branch-name` *Name of the branch to perform the operation on.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### [git-checkout](https://git-scm.com/docs/git-checkout)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git checkout [<branch>|<commit>]
+          ```
+
+          Switch branches or restore working tree files
+
+          `branch` *Name of branch or commit to switch to.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Create branches -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 1
+
+          ##### Create branches
+
+          #### Create a branch
+
+          ```shell
+          $ git branch mononoke
+          ```
+
+          #### List branches
+
+          ```shell
+          $ git branch --list
+          * master
+            mononoke
+          ```
+
+          #### Checkout a branch
+
+          ```shell
+          $ git checkout mononoke
+          Switched to branch 'mononoke'
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Browse repository -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Show status
+
+          ```shell
+          $ git status
+          On branch mononoke
+          nothing to commit, working tree clean
+          ```
+
+          #### Show log
+
+          ```shell
+          $ git log --decorate --oneline --graph
+          * d408e35 (HEAD -> mononoke) That's enough
+          * d8181fb To see with eyes unclouded by hate
+          * a83cd98 (master) Update darth-vader
+          * 10cc414 Add darth-vader
+          * c496492 Add harry-potter
+          * b727c67 Add pikachu
+          * 798e5a2 Add dragonite
+          ```
+
+          #### Checkout master
+
+          ```shell
+          $ git checkout master
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Browse repository -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Get pikachu
+
+          ```shell
+          $ git clone https://github.com/Galadirith/pikachu.git
+          $ cd pikachu
+          ```
+
+          #### Show log
+
+          ```shell
+          $ git log --decorate --oneline --graph --all
+          * df877b6 (origin/mononoke) Update darth-vader
+          * d408e35 That's enough
+          * d8181fb To see with eyes unclouded by hate
+          | * 9834c57 (origin/howl) Update darth-vader
+          | * c7e22ab And you are... who?
+          | * f985bc0 What a pretty color
+          |/
+          * a83cd98 (HEAD -> master, origin/master) Update darth-vader
+          * 10cc414 Add darth-vader
+          * c496492 Add harry-potter
+          * b727c67 Add pikachu
+          * 798e5a2 Add dragonite
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Merge branches with fast-forward definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-merge](https://git-scm.com/docs/git-merge)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git merge [--no-commit] [--no-ff] [<branch-name>]
+          ```
+
+          Join two or more development histories together
+
+          `--no-commit` *Do not create a new commit for a sucessfull merge*
+
+          <!-- .element: class="parameter" -->
+
+          `--no-ff` *Do not fast-forward merge even if a fast-forward merge
+          can be performed*
+
+          <!-- .element: class="parameter" -->
+
+          `--abort` *Stop a merge of branches are return to the last commit
+          you had checked out.*
+
+          <!-- .element: class="parameter" -->
+
+          `branch-name` *Name of the branch to merge into the checked out
+          branch*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### fast-forward merge
+        </script></div>
+        <div data-markdown><script type="text/template">
+          A **fast-forward** merge can be performed when the branch head of
+          the current branch is a direct ancestor of the branch head of the
+          merging branch. In this case the branch head is simply moved
+          forward.
+        </script></div>
+      </div></div></section>
+
+      <!-- # Merge branches with fast-forward -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 2
+
+          ##### Merge branches with fast-forward
+
+          #### Merge with howl
+
+          ```shell
+          $ git merge origin/howl
+          Updating a83cd98..9834c57
+          Fast-forward ...
+          ```
+
+          #### Show log
+
+          ```shell
+          $ git log --decorate --oneline --graph --all
+          * df877b6 (origin/mononoke) Update darth-vader
+          * d408e35 That's enough
+          * d8181fb To see with eyes unclouded by hate
+          | * 9834c57 (HEAD -> master, origin/howl) Update darth-vader
+          | * c7e22ab And you are... who?
+          | * f985bc0 What a pretty color
+          |/
+          * a83cd98 (origin/master) Update darth-vader
+          * 10cc414 Add darth-vader
+          * c496492 Add harry-potter
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Merge branches with new commit and conflict -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          ##### 3 + 4
+
+          ###### Merge branches with new commit and conflict
+
+          #### Merge with mononoke
+
+          ```shell
+          $ git merge origin/mononoke
+          Auto-merging darth-vader.py
+          CONFLICT (content): Merge conflict in darth-vader.py
+          Automatic merge failed; fix conflicts and then commit
+          ```
+
+          #### Show status
+
+          ```shell
+          $ git status
+          On branch master
+          You have unmerged paths.
+            (use "git merge --abort" to abort the merge)
+          Changes to be committed:
+          	  new file:   prince-ashitaka.py
+          	  new file:   san.py
+          Unmerged paths:
+            (use "git add <file>..." to mark resolution)
+          	  both modified:   darth-vader.py
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Merge branches with new commit and conflict (cont.) -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          ##### 3 + 4
+
+          ###### Merge branches with new commit and conflict (cont.)
+
+          #### Inspect conflict
+
+          ```python
+          # darth-vader.py
+          <<<<<<< HEAD
+          print('Howl changed me')
+          =======
+          print('Mononoke changed me')
+          >>>>>>> mononoke
+          ```
+
+          #### Edit conflict
+
+          ```python
+          # darth-vader.py
+          print('Mononoke changed me')
+          ```
+
+          #### Add darth-varder.py and commit
+
+          ```shell
+          $ git add darth-vader.py
+          $ git commit -m "Merge branch 'origin/mononoke'"
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Browse repository -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Show status
+
+          ```shell
+          $ git status
+          On branch master
+          nothing to commit, working tree clean
+          ```
+
+          #### Show log
+
+          ```shell
+          $ git log --decorate --oneline --graph --all
+          *   2580d92 (HEAD -> master) Merge branch 'origin/mononoke'
+          |\
+          | * df877b6 (origin/mononoke) Update darth-vader
+          | * d408e35 That's enough
+          | * d8181fb To see with eyes unclouded by hate
+          * | 9834c57 (origin/howl) Update darth-vader
+          * | c7e22ab And you are... who?
+          * | f985bc0 What a pretty color
+          |/
+          * a83cd98 (origin/master) Update darth-vader
+          * 10cc414 Add darth-vader
+          * c496492 Add harry-potter
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Undo commits command definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-reset](https://git-scm.com/docs/git-reset)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git reset [--soft | --hard ] [<commit>]
+          ```
+
+          Reset current branch head to the specified commit
+
+          `--soft` *Does not change the working tree and any indexed files (
+          `git add <path>`) will remain or be added to the index.*
+
+          <!-- .element: class="parameter" -->
+
+          `--hard` *Reset the working tree the a previous state, discarding
+          any changes in the working tree and staged changes in the index.*
+
+          <!-- .element: class="parameter" -->
+
+          `commit` *Commit to reset the current branch head to.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- #  -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Create a new commit
+
+          ```shell
+          $ echo "To be reset" > reset.txt
+          $ git add reset.txt
+          $ git status .
+            On branch master
+            Changes to be committed:
+              (use "git reset HEAD <file>..." to unstage)
+            	new file:   reset.txt
+          $ git commit -m "The message will be reset"
+          ```
+
+          #### Show the log
+
+          ```shell
+          $ git log --decorate --oneline --graph --all
+          * 77403eb (HEAD -> master) The message will be reset
+          *   8fc5225 Merge branch 'origin/mononoke'
+          |\
+          | * df877b6 (origin/mononoke) Update darth-vader
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Undo commits -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          ##### 5
+
+          ###### Undo commits
+
+          #### Soft reset
+
+          ```shell
+          $ git reset --soft 8fc5225
+          ```
+
+          #### Show status
+
+          ```shell
+          $ git status .
+            On branch master
+            Changes to be committed:
+              (use "git reset HEAD <file>..." to unstage)
+            	new file:   reset.txt
+          ```
+
+          #### Add another commit to reset
+
+          ```shell
+          $ git commit -m "This message will also be reset"
+          $ git log --decorate --oneline --graph --all
+            * 5df8e19 (HEAD -> master) This message will also be reset
+            * 8fc5225 Merge branch 'origin/mononoke'
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Undo commits (cont.)-->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          ##### 5
+
+          ##### Undo commits (cont.)
+
+          #### Hard reset
+
+          ```shell
+          $ git reset --hard 8fc5225
+          ```
+
+          #### Show status
+
+          ```shell
+          $ git status .
+            On branch master
+            nothing to commit, working tree clean
+          ```
+
+          <span></span>
+
+          ```shell
+          $ git log --decorate --oneline --graph --all
+          *   8fc5225 (HEAD -> master) Merge branch 'origin/mononoke'
+          |\
+          | * df877b6 (origin/mononoke) Update darth-vader
+          | * d408e35 That's enough
+          ```
+        </script></div>
+      </div></section>
+
+    </section>
+
+    <!-- # Pattern III : Collaborate with GitHub -->
+    <section>
+      <section class="heading" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          # Pattern III
+          ### Project collaboration with GitHub
+        </script></div>
+      </section>
+
+      <!-- # Goals -->
+      <section class="prose" data-state="no-controls">
+        <div data-markdown><script type="text/template">
+          ### Goals
+
+          1. **Create a fork**<br>
+             Create a copy of a GitHub repository
+
+          2. **Clone the fork**<br>
+
+          3. **Create and edit a branch**<br>
+
+          4. **Push to the fork**<br>
+
+          5. **Create a pull request**<br>
+             Initiate a merge without commit between two forks
+
+          6. **Fetch changes from upstream** <br>
+             Update local repository with commits from the original
+
+          7. **Push upstream changes to fork**
+        </script></div>
+      </section>
+
+      <!-- # Create a fork and clone it definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### Fork
+        </script></div>
+        <div data-markdown><script type="text/template">
+          *A fork is a personal copy of another user's repository that lives
+          on your account. Forks allow you to freely make changes to a
+          project without affecting the original. Forks remain attached to
+          the original, allowing you to submit a pull request to the
+          original's author to update with your changes. You can also keep
+          your fork up to date by pulling in updates from the original.*
+          *[Fork, GitHub glossary](https://help.github.com/articles/github-glossary/)*
+
+          <!-- .element: class="quote" -->
+        </script></div>
+        <div data-markdown><script type="text/template">
+          #### [git-clone](https://git-scm.com/docs/git-clone)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git clone <url> [<directory>]
+          ```
+
+          Clone a repository into a new directory
+
+          `url` *URL to a remote repository.*
+
+          <!-- .element: class="parameter" -->
+
+          `directory` *Directory in which to clone the repository. If this is
+          omitted then a new folder will be created with the same name as the
+          repository and it will be cloned into this folder.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Create a fork and clone-->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          ##### 1+2
+
+          ##### Create a fork and clone it
+
+          #### Find this repo
+
+          Go to [github.com/Galadirith/dragonite](https://github.com/Galadirith/dragonite)
+
+          #### Create a fork
+
+          ![](img/fork.png)
+
+          #### Copy clone url
+
+          ![](img/clone.png)
+
+          #### Clone repository
+
+          ```shell
+          $ git clone https://github.com/<username>/dragonite
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Create and edit a feature branch -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 3
+
+          #### Create and edit a branch
+
+          #### Create a branch
+
+          ```shell
+          $ git branch update-readme
+          $ git checkout update-readme
+          ```
+
+          #### Update README.md
+
+          ```bash
+          # README.md
+          ...
+          - Edward Fauchon-Jones
+          - Steven Fairhurst
+          - Paul Hopkins
+          - Duncan MacLeod
+          - <add-your-name-here>
+          ```
+
+          #### Commit changes
+
+          ```shell
+          $ git add README.md
+          $ git commit -m "Add <your-name> to README"
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Push to the fork definitions -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Remote-tracking branches
+
+          A remote branch is a branch that exist on a remote repository. A
+          **remote-tracking branch** is a local branch that follows what the
+          remote branch is doing. An example of a remote-tracking branch is
+          `origin/master`.
+
+          #### Upstream branches
+
+          An **upstream branch** of a local branch is the default branch that
+          will be merged into the local branch. The local branch is often
+          called a **tracking branch**. When you clone a repository an
+          `origin` remote is automatically added and the `master` branch is
+          setup to track the `origin/master` remote-tracking branch.
+        </script></div>
+      </div></section>
+
+      <!-- # Push to the fork -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Show all branches
+
+          ```shell
+          $ git branch --list -a
+            master
+          * update-readme
+            remotes/origin/master
+          ```
+
+          #### Show upstream branches
+
+          ```shell
+          $ git branch --list -a -vv
+            master        52ee3e5 [origin/master] Add README
+          * update-readme         52ee3e5 Add README
+            remotes/origin/master 52ee3e5 Add README
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Push to the fork -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 4
+
+          #### Push to the fork
+
+          #### Push to fork
+
+          ```shell
+          $ git push -u origin update-readme
+          ```
+
+          #### Future pushes from update-readme
+
+          ```shell
+          $ git push
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Push to the fork -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### Show upstream branches
+
+          ```shell
+          $ git branch --list -a -vv
+            master        52ee3e5 [origin/master] Add README
+          * update-readme 52ee3e5 [origin/update-readme] Add README
+            remotes/origin/master        52ee3e5 Add README
+            remotes/origin/update-readme 52ee3e5 Add README
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Create pull request -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 5
+
+          #### Create pull request
+        </script></div>
+        <div>
+          <div></div>
+          <video src="https://gravity.astro.cf.ac.uk/~c1548640/pull-request.mp4" autoplay controls></video>
+        </div>
+      </div></section>
+
+      <!-- # Fetch changes from upstream definitions -->
+      <section class="two-column-1-3"><div><div>
+        <div data-markdown><script type="text/template">
+          #### [git-fetch](https://git-scm.com/docs/git-fetch)
+        </script></div>
+        <div data-markdown><script type="text/template">
+          ```shell
+          $ git fetch <remote-name>
+          ```
+
+          Download changes made to a remote repository
+
+          `remote-name` *The name of the remote repository you want to
+          download changes from.*
+
+          <!-- .element: class="parameter" -->
+        </script></div>
+      </div></div></section>
+
+      <!-- # Pull changes from upstream -->
+      <section class="two-column-1-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 5
+
+          #### Fetch changes from upstream
+
+          #### Add remote
+
+          ```shell
+          $ git remote add upstream \
+            https://github.com/Galadirith/stfc-cdt-national-event-git.git
+          ```
+
+          #### Fetch changes
+
+          ```shell
+          $ git fetch upstream
+          ```
+
+          #### List all branches
+
+          ```shell
+          $ git branch --list -a
+            master
+          * update-readme
+            remotes/origin/master
+            remotes/origin/update-readme
+            remotes/upstream/master
+            remotes/upstream/update-readme
+          ```
+        </script></div>
+      </div></section>
+
+      <!-- # Pull changes from upstream -->
+      <section class="two-column-2-3"><div>
+        <div data-markdown><script type="text/template">
+          #### 5
+
+          #### Fetch changes from upstream (cont.)
+
+          #### Checkout master
+
+          ```shell
+          $ git checkout master
+          ```
+
+          #### Merge upstream/master
+
+          ```shell
+          $ git merge upstream/master
+          ```
+
+          #### 6
+
+          #### Push upstream changes to fork
+
+          #### Push to fork
+
+          ```shell
+          $ git push
+          ```
+        </script></div>
+      </div></section>
+
+    </section>
+
+    <!-- # Profile -->
+    <section class="heading" data-state="no-controls">
+      <div class="profile">
+        <div>
+          <div data-markdown><script type="text/template">
+            <img src="img/unicorn.png" style="box-shadow: none; background: none;">
+          </script></div>
+        </div>
+        <div>
+          <div data-markdown><script type="text/template">
+            <br><br><br>
+            ### And that's VCS,<br> Git and GitHub
+            <br><br><br>
+          </script></div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- # Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/shell.min.js"></script>
+
+<script type="text/javascript" src="js/index-42df7af2fe09d9f91f08.js"></script></body>
+</html>

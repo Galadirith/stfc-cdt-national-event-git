@@ -1,7 +1,7 @@
 node_modules/
 build/
 data/
-img/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
